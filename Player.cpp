@@ -31,6 +31,24 @@ Player::Player(std::string name)
     this->y= 0;
 }
 
+Player::Player(Player const &copy)
+{
+    *this = copy;
+}
+
+Player &Player::operator=(Player const &rhs)
+{
+    if (this != &rhs)
+    {
+        this->name = rhs.name;
+        this->height = rhs.height;
+        this->width = rhs.width;
+        this->x = rhs.x;
+        this->y = rhs.y;
+    }
+    return (*this);
+}
+
 void Player::takeDamage(int damage)
 {
     if ((this->EnergyPoints - damage) >0)

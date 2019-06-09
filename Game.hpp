@@ -19,6 +19,8 @@
 class Game{
     private:
     int timer;
+    Bot bots[5];
+    Player player1;
 
     public:
     int canvas[20][20];
@@ -31,16 +33,17 @@ class Game{
 
     int getCanvasItem(int i, int j);
     void addPlayer(Player a);
-    void spawnBot();
+    Bot spawnBot();
+    void    initialiseBots();
 
-    void MoveUp(Player t);
-    void MoveDown(Player t);
-    void MoveLeft(Player t);
-    void MoveRight(Player t);
+    void MoveUpPlayer();
+    void MoveDownPlayer();
+    void MoveLeftPlayer();
+    void MoveRightPlayer();
 
     void MoveUp(Bot t);
     void MoveDown(Bot t);
-    void MoveLeft(Bot t);
+    void MoveLeftBot();
     void MoveRight(Bot t);
     int  collition(int x,int y,int width,int height);
 };

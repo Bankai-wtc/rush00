@@ -13,9 +13,8 @@
 #ifndef PLAYER_CLASS_H
 # define PLAYER_CLASS_H
 #include <string>
-#include "GameEntity.hpp"
 
-class Player : GameEntity{
+class Player {
     private:
     int EnergyPoints, width, height, x, y;
     std::string name;

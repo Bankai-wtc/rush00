@@ -26,9 +26,27 @@ Bot::Bot(std::string name)
     this->name = name;
     this->EnergyPoints = 100;
     this->height = 2;
-    this->width = 2;
+    this->width = 1;
     this->x = 0;
     this->y= 0;
+}
+
+Bot::Bot(Bot const &copy)
+{
+    *this = copy;
+}
+
+Bot &Bot::operator=(Bot const &rhs)
+{
+    if (this != &rhs)
+    {
+        this->name = rhs.name;
+        this->height = rhs.height;
+        this->width = rhs.width;
+        this->x = rhs.x;
+        this->y = rhs.y;
+    }
+    return (*this);
 }
 
 void Bot::takeDamage(int damage)
@@ -43,6 +61,32 @@ void Bot::takeDamage(int damage)
     }   
 }
 
-void Bot::movedown(int &field)
+int Bot::getHeight()
 {
+    return this->height;
+}
+
+int Bot::getWidth()
+{
+    return this->width;
+}
+
+int Bot::getX()
+{
+    return this->x;
+}
+
+int Bot::getY()
+{
+    return this->y;
+}
+
+void Bot::setX(int x)
+{
+    this->x = x;
+}
+
+void Bot::setY(int y)
+{
+    this->y = y;
 }

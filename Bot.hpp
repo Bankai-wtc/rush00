@@ -13,9 +13,8 @@
 #ifndef BOT_CLASS_H
 # define BOT_CLASS_H
 #include <string>
-#include "GameEntity.hpp"
 
-class Bot : GameEntity{
+class Bot {
     private:
     int EnergyPoints, width, height, x, y;
     std::string name;
@@ -24,14 +23,24 @@ class Bot : GameEntity{
     Bot();
     ~Bot();
     Bot(std::string);
-    Bot(const Player &copy);
+    Bot(const Bot &copy);
 
-    Player & operator=(Bot const &rhs);
+    Bot & operator=(Bot const &rhs);
 
     void fire();
     void takeDamage(int damage);
 
     void movedown(int &field);
+
+    int getX();
+    int getY();
+    int getWidth();
+    int getHeight();
+
+    void    setX(int x);
+    void    setY(int y);
+    
+
 };
 
 #endif
